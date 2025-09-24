@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ICRA 2026 · Advanced Human‑Machine Interfaces and Control Strategies for Next Generation Wearable Robots</title>
+  <meta name="description" content="Full-Day Workshop ICRA 2026, Vienna. Advanced HMI and control strategies for next-generation wearable robots.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#B3002D;      /* Rosso Sant'Anna */
+      --primary-600:#D12D35;  /* Accent */
+      --blue:#0065BD;         /* TUM Blue */
+      --navy:#0E2746;         /* Testo scuro */
+      --text:#1F2937;         /* Grigio scuro */
+      --muted:#6B7280;        /* Grigio medio */
+      --bg:#F6F7FA;           /* Sfondo */
+      --surface:#FFFFFF;      /* Card */
+      --ring:#E5E7EB;         /* Bordi */
+      --shadow:0 10px 30px rgba(14,39,70,.10);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+    img{max-width:100%;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    h1,h2,h3{font-family:"Playfair Display",Georgia,serif;margin:.2rem 0 1rem 0}
+    h1{font-size:clamp(2.2rem,1.2rem + 3vw,3.6rem);letter-spacing:.2px}
+    h2{font-size:clamp(1.6rem,1.1rem + 1.4vw,2.2rem);color:var(--primary)}
+    h3{font-size:1.15rem;margin-top:0}
+
+    /* ===== Top Nav ===== */
+    .topnav{position:sticky;top:0;z-index:1000;backdrop-filter:saturate(140%) blur(6px);background:rgba(255,255,255,.65);border-bottom:1px solid rgba(14,39,70,.08)}
+    .topnav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:.7rem 1rem;max-width:1200px;margin:0 auto}
+    .brand{font-family:"Playfair Display",serif;color:var(--navy);font-weight:700}
+    .topnav ul{display:flex;gap:10px;list-style:none;margin:0;padding:0}
+    .topnav a.nav{display:inline-block;padding:.45rem .7rem;border-radius:10px;font-weight:600;color:var(--navy)}
+    .topnav a.nav[aria-current="true"], .topnav a.nav:hover{background:#fff;border:1px solid rgba(14,39,70,.12)}
+    .btn{display:inline-block;text-align:center;font-weight:700;padding:.55rem .9rem;border-radius:12px;border:2px solid transparent;text-decoration:none}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.primary:hover{background:var(--primary-600)}
+    .btn.ghost{background:#fff;color:var(--navy);border-color:rgba(14,39,70,.2)}
+
+    /* ===== Full-bleed Hero ===== */
+    .hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url('assets/ViennaWorkshopFinal.png') center/cover no-repeat;transform:scale(1.03)}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.35))}
+    .hero-content{position:relative;z-index:1;text-align:center;color:#fff;padding:0 1rem}
+    .hero h1{color:#fff;text-shadow:0 6px 28px rgba(0,0,0,.35)}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:12px 0 18px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:.38rem .7rem;border-radius:999px;font-weight:700;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.15);color:#fff}
+    .actions{display:none}
+
+    /* ===== Sections ===== */
+    main{max-width:1200px;margin:0 auto;padding:32px}
+    section{padding:54px 0;border-bottom:1px solid var(--ring);scroll-margin-top:80px}
+    section:last-of-type{border-bottom:none}
+    .grid{display:grid;gap:1.2rem}
+    @media(min-width:760px){.grid.cols-2{grid-template-columns:repeat(2,1fr)}.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--surface);border:1px solid var(--ring);border-radius:14px;padding:1rem;box-shadow:var(--shadow)}
+    .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:top;margin:0 auto .6rem auto}
+
+    table{width:100%;border-collapse:collapse;font-size:1rem}
+    th,td{padding:12px;border-bottom:1px solid var(--ring);text-align:left}
+    thead th{background:#F3F4F6;border-bottom:2px solid var(--primary-600)}
+
+    .logos{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;align-items:center}
+    .logos img{height:56px;width:auto;filter:saturate(.95)}
+
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:12px;top:12px;background:#000;color:#fff;padding:.4rem .6rem;border-radius:8px;z-index:999}
+
+    @media(max-width: 760px){main{padding:22px}}
+  </style>
+</head>
+<body>
+
+<a class="skip" href="#home">Jump to the content</a>
+
+<!-- ===== Top Navigation ===== -->
+<header class="topnav" role="banner">
+  <div class="topnav-inner">
+    <div class="brand">ICRA 2026 · Full-day Workshop</div>
+    <nav aria-label="Sezioni">
+      <ul>
+        <li><a class="nav" href="#home">Home</a></li>
+        <li><a class="nav" href="#about">About</a></li>
+        <li><a class="nav" href="#program">Program</a></li>
+        <li><a class="nav" href="#speakers">Speakers</a></li>
+        <li><a class="nav" href="#organizers">Organizers</a></li>
+        <li><a class="nav" href="#submit">Submit Abstract</a></li>
+      </ul>
+    </nav>
+    <a class="btn primary" href="#submit">Submit Demo</a>
+  </div>
+</header>
+
+<!-- ===== Full-bleed Hero ===== -->
+<section id="home" class="hero" aria-labelledby="home-title">
+  <div class="hero-content">
+    <h1 id="home-title">Advanced Human‑Machine Interfaces and Control Strategies<br>for Next Generation Wearable Robots</h1>
+    <div class="meta" aria-label="Dettagli evento">
+      <span class="badge">📅 June 1, 2026</span>
+      <span class="badge">📍 Vienna, Austria</span>
+      <span class="badge">ICRA 2026 – Full-Day Workshop</span>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!-- ===== About ===== -->
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    <div class="lead">
+      <p>Wearable robots, such as robotic exoskeletons and prostheses, are rapidly transitioning from research prototypes to functional devices impacting healthcare, industry, and daily life. On one side, advances in surgical techniques and implantable technologies have enabled highly integrated bionic limbs; on the other side, AI‑driven or neuromuscular‑informed shared control strategies are opening new possibilities for adaptable, task‑agnostic wearable robots.</p>
+      <p>Despite significant progress in mechatronic hardware, the human‑machine interface (HMI) remains a critical bottleneck for achieving seamless, intuitive, and safe operation. How can engineers finely tune system autonomy to preserve the user’s sense of motor agency? What breakthroughs are redefining the ways humans interface with wearable robots? And what design strategies will shape the roadmap for the next generation of these devices?</p>
+      <p>This full‑day workshop will convene leading experts from academia, industry, and clinical practice to address these questions and more. Discussions will cover advances in multimodal sensing, biosignal decoding, shared control architectures, and adaptive AI‑based controllers, approaches aimed at enhancing functionality while safeguarding user agency and ensuring intuitive, seamless interaction.</p>
+      <p>Through invited talks, interactive panels, and hands‑on discussions, participants will gain insights into state‑of‑the‑art methods and emerging research directions, fostering collaborations across disciplines. The workshop will provide an inclusive platform for early‑career researchers, clinicians, engineers, and users to exchange ideas, address challenges, and shape the future of wearable robotics.</p>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    <div class="lead">
+      <p>Wearable robots, such as robotic exoskeletons and prostheses, are rapidly transitioning from research prototypes to functional devices impacting healthcare, industry, and daily life. On one side, advances in surgical techniques and implantable technologies have enabled highly integrated bionic limbs; on the other side, AI‑driven or neuromuscular‑informed shared control strategies are opening new possibilities for adaptable, task‑agnostic wearable robots.</p>
+      <p>Despite significant progress in mechatronic hardware, the human‑machine interface (HMI) remains a critical bottleneck for achieving seamless, intuitive, and safe operation. How can engineers finely tune system autonomy to preserve the user’s sense of motor agency? What breakthroughs are redefining the ways humans interface with wearable robots? And what design strategies will shape the roadmap for the next generation of these devices?</p>
+      <p>This full‑day workshop will convene leading experts from academia, industry, and clinical practice to address these questions and more. Discussions will cover advances in multimodal sensing, biosignal decoding, shared control architectures, and adaptive AI‑based controllers, approaches aimed at enhancing functionality while safeguarding user agency and ensuring intuitive, seamless interaction.</p>
+      <p>Through invited talks, interactive panels, and hands‑on discussions, participants will gain insights into state‑of‑the‑art methods and emerging research directions, fostering collaborations across disciplines. The workshop will provide an inclusive platform for early‑career researchers, clinicians, engineers, and users to exchange ideas, address challenges, and shape the future of wearable robotics.</p>
+    </div>
+  </section>
+
+  <!-- ===== Program ===== -->
+  <section id="program" aria-labelledby="program-title">
+    <h2 id="program-title">Program</h2>
+    <h3>Morning Program</h3>
+    <div style="overflow:auto">
+      <table aria-label="Morning Program">
+        <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+        <tbody>
+          <tr><td><strong>08:30 – 08:45</strong></td><td>🗣️ Welcome & Opening Remarks</td></tr>
+          <tr><td><strong>08:45 – 09:10</strong></td><td>🎤 Keynote Talk 1</td></tr>
+          <tr><td><strong>09:10 – 09:35</strong></td><td>🎤 Keynote Talk 2</td></tr>
+          <tr><td><strong>09:35 – 10:00</strong></td><td>🎤 Keynote Talk 3</td></tr>
+          <tr><td><strong>10:00 – 10:10</strong></td><td>🎤 Fast-track presentations</td></tr>
+          <tr><td><strong>10:10 – 10:30</strong></td><td>☕📋 Coffee Break and Poster/Demo Session 1</td></tr>
+          <tr><td><strong>10:30 – 10:55</strong></td><td>🎤 Keynote Talk 4</td></tr>
+          <tr><td><strong>10:55 – 11:20</strong></td><td>🎤 Keynote Talk 5</td></tr>
+          <tr><td><strong>11:20 – 12:00</strong></td><td>💬 Panel Discussion 1 - From brain to periphery ... and back: how to shape the signal route?</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Afternoon Program</h3>
+    <div style="overflow:auto">
+      <table aria-label="Afternoon Program">
+        <thead><tr><th>Time</th><th>Activity</th></tr></thead>
+        <tbody>
+          <tr><td><strong>13:30 – 13:45</strong></td><td>🗣️ Welcome & Opening Remarks</td></tr>
+          <tr><td><strong>13:45 – 14:10</strong></td><td>🎤 Keynote Talk 6</td></tr>
+          <tr><td><strong>14:10 – 14:35</strong></td><td>🎤 Keynote Talk 7</td></tr>
+          <tr><td><strong>14:35 – 15:00</strong></td><td>🎤 Keynote Talk 8</td></tr>
+          <tr><td><strong>15:00 – 15:10</strong></td><td>🎤 Fast-track presentations</td></tr>
+          <tr><td><strong>15:10 – 15:30</strong></td><td>☕📋 Coffee Break and Poster/Demo Session 2</td></tr>
+          <tr><td><strong>15:30 – 15:55</strong></td><td>🎤 Keynote Talk 9</td></tr>
+          <tr><td><strong>15:55 – 16:20</strong></td><td>🎤 Keynote Talk 10</td></tr>
+          <tr><td><strong>16:20 – 17:00</strong></td><td>💬 Panel Discussion 2 - Who's leading motion? Embedding Intelligence in Wearable Robots</td></tr>
+          <tr><td><strong>17:00 – 17:15</strong></td><td>🗣️ Concluding Remarks</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== Submit (Poster & Demo) ===== -->
+  <section id="submit" aria-labelledby="submit-title">
+    <h2 id="submit-title">Submissions</h2>
+    <div class="grid cols-2">
+      <!-- Submit Poster -->
+      <div class="card">
+        <h3>📄 Submit Abstract</h3>
+        <ul style="margin:.2rem 0 .6rem 1rem">
+          <li>⏰ <strong>Deadline:</strong> <em>15/05/2026</em></li>
+          <li>✉️ <strong>Contacts:</strong> <a href="mailto:federico.masiero@tum.de?subject=ICRA26%20Advanced%20HMIs%20Workshop%20Abstract%20Submission">federico.masiero@tum.de</a>, <a href="mailto:marta.gherardini@santannapisa.it?subject=ICRA26%20Advanced%20HMIs%20Workshop%20Abstract%20Submission">marta.gherardini@santannapisa.it</a></li>
+          <li>🧾 <strong>Subject email:</strong> <code>[ICRA26 Advanced HMIs Workshop Abstract Submission]</code></li>
+          <li>📐 <strong>Poster Format:</strong>84.1 cm x 118.9 cm<em></em></li>
+          <li>📎 <strong>Template:</strong> <em>2-page abstract using IEEE transactions template</em></li>
+          <li>🔗 <strong>Submission procedure:</strong> <em>via email</em></li>
+        </ul>
+        <p><a class="btn ghost" href="mailto:federico.masiero@tum.de?subject=ICRA26%20Poster%20Submission">Send via email</a></p>
+      </div>
+      <!-- Submit Demo -->
+      <div class="card">
+        <h3>🤖 Submit Demo</h3>
+        <ul style="margin:.2rem 0 .6rem 1rem">
+          <li>⏰ <strong>Deadline:</strong> <em>01/05/2026</em></li>
+          <li>✉️ <strong>Contact:</strong> <a href="mailto:federico.masiero@tum.de?subject=ICRA26%20Advanced%20HMIs%20Workshop%20Demo%20Submission">federico.masiero@tum.de</a>, <a href="mailto:enzo.mastinu@santannapisa.it?subject=ICRA26%20Advanced%20HMIs%20Workshop%20Demo%20Submission">enzo.mastinu@santannapisa.it</a></li>
+          <li>🧾 <strong>Subject email:</strong> <code>[ICRA26 Advanced HMIs Workshop Demo Submission]</code></li>
+          <li>⚙️ <strong>Instructions:</strong> <em>include needed and brought equipement, 2-page abstract (IEEE format) and video of the Demo</em></li>
+          <!--<li>📦 <strong>What to include:</strong> <em>xxxx</em></li> -->
+          <li>🔗 <strong>Submission procedure:</strong> <em>via email</em></li>
+        </ul>
+        <p><a class="btn ghost" href="mailto:federico.masiero@tum.de?subject=ICRA26%20Demo%20Submission">Send via email</a></p>
+      </div>
+    </div>
+
+    <div class="logos" style="margin-top:24px">
+      <img src="assets/loghi/tum.png" alt="Technical University of Munich">
+      <img src="assets/loghi/mirmi.webp" alt="MIRMI">
+      <img src="assets/loghi/logo-sssa.svg" alt="Scuola Superiore Sant'Anna">
+      <img src="assets/loghi/biorobotics.png" alt="The Biorobotics Institute">
+      <img src="assets/loghi/ICRA-VIE26-logo.webp" alt="ICRA 2026 Vienna">
+    </div>
+
+    <p style="text-align:center;margin-top:18px"><a class="btn ghost" id="icsBtn" href="#">CalendarInvite.ics</a></p>
+  </section>
+
+  <!-- ===== Speakers ===== -->
+  <section id="speakers" aria-labelledby="speakers-title">
+    <h2 id="speakers-title">Speakers</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <img class="avatar" src="assets/speakers/cipriani.jpg" alt="Prof. Christian Cipriani">
+        <a href="https://www.santannapisa.it/en/christian-cipriani" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Dr. Christian Cipriani</a>
+        <div class="muted" style="text-align:center">Scuola Superiore Sant’Anna</div>
+        <div class="muted" style="text-align:center;font-style:italic">Osseointegrated and Myokinetic Prosthetic Hands</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/huang.jpg" alt="Prof. Helen Huang">
+        <a href="https://nrel.bme.unc.edu/brief-cv/" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Helen Huang</a>
+        <div class="muted" style="text-align:center">University of North Carolina Chapel Hill and NC State University</div>
+        <div class="muted" style="text-align:center;font-style:italic">Closed-Loop neural control of robotic prosthetic ankles</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/masia.jpg" alt="Prof. Lorenzo Masia">
+        <a href="https://www.lorenzomasia.com/" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Dr. Lorenzo Masia</a>
+        <div class="muted" style="text-align:center">Technical University of Munich</div>
+        <div class="muted" style="text-align:center;font-style:italic">Enhancing Human Performance via Soft Wearable Robotics and Machine Learning.</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/Li.jpg" alt="Prof. Zhijun Li">
+        <a href="http://www.ieee-nrs.org/index.php/zhijun-li/" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Dr. Zhijun Li</a>
+        <div class="muted" style="text-align:center">Tongji University</div>
+        <div class="muted" style="text-align:center;font-style:italic">Physical Triadic Interaction Control of a Constrained Robotic Exoskeleton</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/farina.jpg" alt="Prof. Dario Farina">
+        <a href="https://profiles.imperial.ac.uk/d.farina" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Dr. Dario Farina</a>
+        <div class="muted" style="text-align:center">Imperial College London</div>
+        <div class="muted" style="text-align:center;font-style:italic">Towards Higher Performing Bionic Limbs</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/dosen.jpg" alt="Prof. Strahinja Dosen">
+        <a href="https://vbn.aau.dk/en/persons/sdosen" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Strahinja Dosen</a>
+        <div class="muted" style="text-align:center">Aalborg University</div>
+        <div class="muted" style="text-align:center;font-style:italic">Cloud-connected bionic limbs</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/young.jpeg" alt="Prof. Aaron Young">
+        <a href="https://www.me.gatech.edu/faculty/young" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Aaron Young</a>
+        <div class="muted" style="text-align:center">Georgia Institute of Technology</div>
+        <div class="muted" style="text-align:center;font-style:italic">Solving the big data issues with data-driven control strategies for wearable robotics: A comprehensive domain adaptation approach</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/crea.jpg" alt="Prof. Simona Crea">
+        <a href="https://www.santannapisa.it/en/simona-crea" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Simona Crea</a>
+        <div class="muted" style="text-align:center">Scuola Superiore Sant'Anna</div>
+        <div class="muted" style="text-align:center;font-style:italic">Personalizing hip exoskeleton assistance can make chronic post-stroke individuals walk faster</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/Marasco.jpg" alt="Prof. Paul D. Marasco">
+        <a href="https://www.lerner.ccf.org/biomedical-engineering/marasco/" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Paul D. Marasco</a>
+        <div class="muted" style="text-align:center">Cleveland Clinics</div>
+        <div class="muted" style="text-align:center;font-style:italic">Sensory-motor bionics that merge with the sense of self with insight into the brain organization of multisensory integration</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/speakers/Hargrove.jpg" alt="Prof. Levi Hargrove">
+        <a href="https://www.sralab.org/researchers/levi-hargrove-phd" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Levi Hargrove</a>
+        <div class="muted" style="text-align:center">Shirley Ryan Ability Lab and Northwestern University</div>
+        <div class="muted" style="text-align:center;font-style:italic">The Struggle is Real: Development and Translation of Bionic Limb Technology</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Organizers ===== -->
+  <section id="organizers" aria-labelledby="org-title">
+    <h2 id="org-title">Organizers</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <img class="avatar" src="assets/organizers/Masiero.jpg" alt="Dr. Federico Masiero">
+        <a href="https://federicomasierophd.com/" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Dr. Federico Masiero</a>
+        <div class="muted" style="text-align:center">Technical University of Munich</div>
+        <div class="muted" style="text-align:center;font-style:italic">federico.masiero@tum.de</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/organizers/Gherardini.png" alt="Dr. Marta Gherardini">
+        <a href="https://www.santannapisa.it/en/marta-gherardini" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Dr. Marta Gherardini</a>
+        <div class="muted" style="text-align:center">Scuola Superiore Sant’Anna</div>
+        <div class="muted" style="text-align:center;font-style:italic">marta.gherardini@santannapisa.it</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/organizers/Mastinu.jpg" alt="Dr. Enzo Mastinu">
+        <a href="https://www.santannapisa.it/en/enzo-mastinu" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Dr. Enzo Mastinu</a>
+        <div class="muted" style="text-align:center">Scuola Superiore Sant’Anna</div>
+        <div class="muted" style="text-align:center;font-style:italic">enzo.mastinu@santannapisa.it</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/organizers/Controzzi.webp" alt="Prof. Dr. Marco Controzzi">
+        <a href="https://www.santannapisa.it/en/marco-controzzi" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Dr. Marco Controzzi</a>
+        <div class="muted" style="text-align:center">Scuola Superiore Sant’Anna</div>
+        <div class="muted" style="text-align:center;font-style:italic">marco.controzzi@santannapisa.it</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/organizers/Masia.jpg" alt="Prof. Dr. Lorenzo Masia">
+        <a href="https://www.lorenzomasia.com/" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Dr. Lorenzo Masia</a>
+        <div class="muted" style="text-align:center">Technical University of Munich</div>
+        <div class="muted" style="text-align:center;font-style:italic">lorenzo.masia@tum.de</div>
+      </div>
+      <div class="card">
+        <img class="avatar" src="assets/organizers/Cipriani.jpg" alt="Prof. Dr. Christian Cipriani">
+        <a href="https://www.santannapisa.it/en/christian-cipriani" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Dr. Christian Cipriani</a>
+        <div class="muted" style="text-align:center">Scuola Superiore Sant’Anna</div>
+        <div class="muted" style="text-align:center;font-style:italic">christian.cipriani@santannapisa.it</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  // Active-link on scroll
+  const navLinks = Array.from(document.querySelectorAll('.topnav a.nav'));
+  const ids = navLinks.map(a => a.getAttribute('href').replace('#',''));
+  const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+  const linkById = new Map(navLinks.map(a => [a.getAttribute('href').replace('#',''), a]));
+
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      const id = entry.target.id;
+      const link = linkById.get(id);
+      if(!link) return;
+      if(entry.isIntersecting){
+        navLinks.forEach(a=>{a.removeAttribute('aria-current');});
+        link.setAttribute('aria-current','true');
+      }
+    });
+  },{rootMargin:'-35% 0px -55% 0px',threshold:0.1});
+  sections.forEach(sec=>obs.observe(sec));
+
+  // .ics generator
+  document.getElementById('icsBtn')?.addEventListener('click', function(e){
+    e.preventDefault();
+    const dtStart = '20260601T083000';
+    const dtEnd   = '20260601T180000';
+    const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//ICRA26 Workshop//IT\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:${Date.now()}@icra26workshop\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').split('.')[0]}Z\nDTSTART;TZID=Europe/Vienna:${dtStart}\nDTEND;TZID=Europe/Vienna:${dtEnd}\nSUMMARY:ICRA 2026 Workshop – Advanced HMI & Control for Wearable Robots\nLOCATION:Vienna, Austria\nDESCRIPTION:Full-day workshop at ICRA 2026 (Vienna). Aggiorna orari/titolo quando definitivi.\nEND:VEVENT\nEND:VCALENDAR`;
+    const blob = new Blob([ics], {type:'text/calendar'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'ICRA26-Workshop.ics'; a.click();
+    setTimeout(()=>URL.revokeObjectURL(url), 1500);
+  });
+</script>
+</body>
+</html>
