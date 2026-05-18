@@ -176,7 +176,7 @@
         <img class="avatar" src="assets/speakers/Cappello.jpg" alt="Prof. Leonardo Cappello">
         <a href="https://www.santannapisa.it/en/leonardo-cappello" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Leonardo Cappello</a>
         <div class="muted" style="text-align:center">Scuola Superiore Sant'Anna</div>
-        <div class="muted" style="text-align:center;font-style:italic">Personalizing hip exoskeleton assistance can make chronic post-stroke individuals walk faster</div>
+        <div class="muted" style="text-align:center;font-style:italic">Muscoloskeletal Expansion through an Osseointegrated Implant</div>
       </div>
       <div class="card">
         <img class="avatar" src="assets/speakers/Gherardini.png" alt="Dr. Marta Gherardini">
@@ -303,9 +303,9 @@
   // .ics generator
   document.getElementById('icsBtn')?.addEventListener('click', function(e){
     e.preventDefault();
-    const dtStart = '20260601T083000';
-    const dtEnd   = '20260601T180000';
-    const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//BioRob26 Workshop//IT\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:${Date.now()}@biorob26workshop\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').split('.')[0]}Z\nDTSTART;TZID=Europe/Vienna:${dtStart}\nDTEND;TZID=Europe/Vienna:${dtEnd}\nSUMMARY:Biorob 2026 Workshop – Advanced HMI & Control for Wearable Robots\nLOCATION:Edmonton, Canada\nDESCRIPTION:Half-day workshop at Biorob 2026 (Vienna). Aggiorna orari/titolo quando definitivi.\nEND:VEVENT\nEND:VCALENDAR`;
+    const dtStart = '20260601T090000';
+    const dtEnd   = '20260601T123000';
+    const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//BioRob26 Workshop//IT\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:${Date.now()}@biorob26workshop\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').split('.')[0]}Z\nDTSTART;TZID=America/Edmonton:${dtStart}\nDTEND;TZID=America/Edmonton:${dtEnd}\nSUMMARY:Biorob 2026 Workshop – Advanced HMI & Control for Wearable Robots\nLOCATION:Edmonton, Canada\nDESCRIPTION:Half-day morning workshop at Biorob 2026 (Edmonton). From 9 a.m. to 12:30 p.m.\nEND:VEVENT\nEND:VCALENDAR`;
     const blob = new Blob([ics], {type:'text/calendar'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
