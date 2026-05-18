@@ -173,8 +173,8 @@
         <div class="muted" style="text-align:center;font-style:italic">Solving the big data issues with data-driven control strategies for wearable robotics: A comprehensive domain adaptation approach</div>
       </div>
       <div class="card">
-        <img class="avatar" src="assets/speakers/Cappello.jpg" alt="Prof. Leonardo Cappello">
-        <a href="https://www.santannapisa.it/en/leonardo-cappello" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Leonardo Cappello</a>
+        <img class="avatar" src="assets/speakers/Crea.jpg" alt="Prof. Simona Crea">
+        <a href="https://www.santannapisa.it/en/simona-crea" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Simona Crea</a>
         <div class="muted" style="text-align:center">Scuola Superiore Sant'Anna</div>
         <div class="muted" style="text-align:center;font-style:italic">Personalizing hip exoskeleton assistance can make chronic post-stroke individuals walk faster</div>
       </div>
@@ -244,7 +244,7 @@
       <div class="card">
         <h3>📄 Submit Abstract</h3>
         <ul style="margin:.2rem 0 .6rem 1rem">
-          <li>⏰ <strong>Deadline:</strong> <em>30/06/2026</em></li>
+          <li>⏰ <strong>Deadline:</strong> <em>15/05/2026</em></li>
           <li>✉️ <strong>Contacts:</strong> <a href="mailto:federico.masiero@tum.de?subject=Biorob26%20Advanced%20HMIs%20Workshop%20Abstract%20Submission">federico.masiero@tum.de</a>, <a href="mailto:marta.gherardini@santannapisa.it?subject=Biorob26%20Advanced%20HMIs%20Workshop%20Abstract%20Submission">marta.gherardini@santannapisa.it</a></li>
           <li>🧾 <strong>Subject email:</strong> <code>[BioRob26 Advanced HMIs Workshop Abstract Submission]</code></li>
           <li>📐 <strong>Poster Format:</strong>84.1 cm x 118.9 cm<em></em></li>
@@ -257,7 +257,7 @@
       <div class="card">
         <h3>🤖 Submit Demo</h3>
         <ul style="margin:.2rem 0 .6rem 1rem">
-          <li>⏰ <strong>Deadline:</strong> <em>30/06/2026</em></li>
+          <li>⏰ <strong>Deadline:</strong> <em>01/05/2026</em></li>
           <li>✉️ <strong>Contact:</strong> <a href="mailto:federico.masiero@tum.de?subject=BioRob26%20Advanced%20HMIs%20Workshop%20Demo%20Submission">federico.masiero@tum.de</a>, <a href="mailto:enzo.mastinu@santannapisa.it?subject=BioRob26%20Advanced%20HMIs%20Workshop%20Demo%20Submission">enzo.mastinu@santannapisa.it</a></li>
           <li>🧾 <strong>Subject email:</strong> <code>[BioRob26 Advanced HMIs Workshop Demo Submission]</code></li>
           <li>⚙️ <strong>Instructions:</strong> <em>include needed and brought equipement, 2-page abstract (IEEE format) and video of the Demo</em></li>
@@ -305,7 +305,7 @@
     e.preventDefault();
     const dtStart = '20260601T083000';
     const dtEnd   = '20260601T180000';
-    const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//BioRob26 Workshop//IT\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:${Date.now()}@biorob26workshop\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').split('.')[0]}Z\nDTSTART;TZID=Europe/Vienna:${dtStart}\nDTEND;TZID=Europe/Vienna:${dtEnd}\nSUMMARY:Biorob 2026 Workshop – Advanced HMI & Control for Wearable Robots\nLOCATION:Edmonton, Canada\nDESCRIPTION:Half-day workshop at Biorob 2026 (Vienna). Aggiorna orari/titolo quando definitivi.\nEND:VEVENT\nEND:VCALENDAR`;
+    const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//BioRob26 Workshop//IT\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:${Date.now()}@biorob26workshop\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').split('.')[0]}Z\nDTSTART;TZID=Europe/Vienna:${dtStart}\nDTEND;TZID=Europe/Vienna:${dtEnd}\nSUMMARY:Biorob 2026 Workshop – Advanced HMI & Control for Wearable Robots\nLOCATION:Vienna, Austria\nDESCRIPTION:Half-day workshop at Biorob 2026 (Vienna). Aggiorna orari/titolo quando definitivi.\nEND:VEVENT\nEND:VCALENDAR`;
     const blob = new Blob([ics], {type:'text/calendar'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
