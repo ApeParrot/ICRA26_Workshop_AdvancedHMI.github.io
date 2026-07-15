@@ -61,6 +61,14 @@
     .card{background:var(--surface);border:1px solid var(--ring);border-radius:14px;padding:1rem;box-shadow:var(--shadow)}
     .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:top;margin:0 auto .6rem auto}
 
+    .card.speaker{position:relative;overflow:hidden;min-height:270px}
+    .card.speaker:focus{outline:2px solid var(--blue);outline-offset:2px}
+    .bio-overlay{position:absolute;inset:0;display:flex;background:var(--navy);color:#fff;border-radius:14px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s ease,transform .22s ease;overflow-y:auto;overscroll-behavior:contain}
+    .bio-overlay-inner{margin:auto 0;padding:1.1rem 1.2rem}
+    .bio-overlay-inner strong{display:block;font-family:"Playfair Display",serif;font-size:1.05rem;margin-bottom:.4rem}
+    .bio-overlay-inner p{margin:0;font-size:.88rem;line-height:1.55;color:rgba(255,255,255,.92)}
+    .card.speaker:hover .bio-overlay,.card.speaker:focus-within .bio-overlay{opacity:1;visibility:visible;transform:translateY(0)}
+
     table{width:100%;border-collapse:collapse;font-size:1rem}
     th,td{padding:12px;border-bottom:1px solid var(--ring);text-align:left}
     thead th{background:#F3F4F6;border-bottom:2px solid var(--primary-600)}
@@ -148,47 +156,75 @@
   <section id="speakers" aria-labelledby="speakers-title">
     <h2 id="speakers-title">Speakers</h2>
     <div class="grid cols-3">
-      <div class="card">
+      <div class="card speaker" tabindex="0">
         <img class="avatar" src="assets/speakers/Durandau.jpg" alt="Prof. Guillaume Durandau">
         <a href="https://www.mcgill.ca/mecheng/guillaume-durandau" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Guillaume Durandau</a>
         <div class="muted" style="text-align:center">McGill University</div>
         <div class="muted" style="text-align:center;font-style:italic">To be defined</div>
+        <div class="bio-overlay"><div class="bio-overlay-inner">
+          <strong>Prof. Guillaume Durandau</strong>
+          <p>Guillaume Durandau, PhD, is an Assistant Professor at the Department of Mechanical Engineering, McGill University, Canada and a researcher affiliated with the Centre for Interdisciplinary Research in Rehabilitation of Greater Montreal (CRIR) at the Jewish Rehabilitation Hospital. Dr. Durandau's research aims to enhance human mobility and restore motor function in individuals with neurological or musculoskeletal impairments by combining biomechanics, neuroscience, and robotics. His contributions emphasize intuitive control strategies, neuromechanical modelling, and user-centred design, enabling more adaptive and effective assistive technologies in both clinical and real‑world environments. He is an FRQS research scholar - Junior 1, and has been awarded the Best Demo Award at BioRob 2018 and the Best Doctoral Thesis Award by the European Society of Biomechanics in 2021.</p>
+        </div></div>
       </div>
-      <div class="card">
-        <img class="avatar" src="assets/speakers/Tricomi.webp" alt="Dr. Enrica Tricomi">
+      <div class="card speaker" tabindex="0">
+        <img class="avatar" src="assets/speakers/Tricomi.jpg" alt="Dr. Enrica Tricomi">
         <a href="https://www.lorenzomasia.com/" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Dr. Enrica Tricomi</a>
         <div class="muted" style="text-align:center">Technical University of Munich</div>
         <div class="muted" style="text-align:center;font-style:italic">Enhancing Human Performance via Soft Wearable Robotics and Machine Learning.</div>
+        <div class="bio-overlay"><div class="bio-overlay-inner">
+          <strong>Dr. Enrica Tricomi</strong>
+          <p>Enrica Tricomi received the bachelor's and the master's degrees in biomedical engineering from Politecnico di Torino, in 2017 and 2019, and the Ph.D. degree in biorobotic engineering from Heidelberg University, in 2025 (advisor Prof. L. Masia). During her PhD she worked on developing wearable exosuits for lower-limb assistance across wellness, sport, and clinical applications, combining hardware design, embedded control, and multimodal sensing. Currently she is a postdoctoral researcher at TUM, focusing on hybrid assistive robotic systems and supporting the coordination of lower limb related research projects. This coming October she will start as Assistant Professor in Biomechanical Engineering at the Department of Mechanical Engineering of TUM. In 2024, she was the recipient of the IEEE RAS Outstanding Student Leadership Award for contributions to the Robotics and Automation Society and in 2026 the Bertha-Benz Preis for her PhD dissertation.</p>
+        </div></div>
       </div>
-      <div class="card">
+      <div class="card speaker" tabindex="0">
         <img class="avatar" src="assets/speakers/Dosen.jpg" alt="Prof. Strahinja Dosen">
         <a href="https://vbn.aau.dk/en/persons/sdosen" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Strahinja Dosen</a>
         <div class="muted" style="text-align:center">Aalborg University</div>
         <div class="muted" style="text-align:center;font-style:italic">Cloud-connected bionic limbs</div>
+        <div class="bio-overlay"><div class="bio-overlay-inner">
+          <strong>Prof. Strahinja Dosen</strong>
+          <p>Strahinja Dosen received the Diploma of Engineering in Electrical Engineering and the M.Sc. degree in Biomedical Engineering in 2000 and 2004, respectively, from the Faculty of Technical Sciences, University of Novi Sad, Serbia, and the Ph.D. degree in Biomedical Engineering from the Center for Sensory-Motor Interaction, Aalborg University, Denmark, in 2009. From 2011 to 2017, he worked as a Research Scientist at the Institute for Neurorehabilitation Systems, University Medical Center Gottingen, Germany, and then as an Associate Professor at the Department of Health Science and Technology (HST), Aalborg University (AAU). Currently, he is a Full Professor in the same Department and leads a research group on Neurorehabilitation Systems. Prof. Dosen was a principal investigator for AAU and HST in several EU (Tactility, Wearplex, Sixthsense, SimBionics, and Growt5) and nationally funded (Robin, Remap, Climb, NeuroMate) projects. He published more than 130 manuscripts in peer-reviewed journals, and his main research interest is the closed-loop control of assistive robotic systems.</p>
+        </div></div>
       </div>
-      <div class="card">
+      <div class="card speaker" tabindex="0">
         <img class="avatar" src="assets/speakers/Young.jpeg" alt="Prof. Aaron Young">
         <a href="https://www.me.gatech.edu/faculty/young" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Aaron Young</a>
         <div class="muted" style="text-align:center">Georgia Institute of Technology</div>
         <div class="muted" style="text-align:center;font-style:italic">Solving the big data issues with data-driven control strategies for wearable robotics: A comprehensive domain adaptation approach</div>
+        <div class="bio-overlay"><div class="bio-overlay-inner">
+          <strong>Prof. Aaron Young</strong>
+          <p>Aaron Young is an Associate Professor and Woodruff Faculty Fellow and James R. and Sarah R. Borders Faculty Fellow in the Woodruff School of Mechanical Engineering at Georgia Tech. He has directed the Exoskeleton and Prosthetic Intelligent Controls (EPIC) lab since 2016. Dr. Young received his MS and PhD degrees in Biomedical Engineering with a focus on neural and rehabilitation engineering from Northwestern University in 2011 and 2014 respectively. He received a BS degree in Biomedical Engineering from Purdue University in 2009. He also completed a post-doctoral fellowship at the University of Michigan in the Human Neuromechanics Lab working with lower limb exoskeletons and powered orthoses to augment human performance. His research area is in advanced control systems for robotic prosthetic and exoskeleton systems for humans with movement impairment. He combines machine learning, robotics, human biomechanics, and control systems to design wearable robots to improve the community mobility of individuals with walking disability. He has received an NIH New Innovator Award (DP2), NIH NCMRR New Investigator award and IEEE New Faces of Engineering award, and his EPIC lab group won the International VIP Consortium Innovation Competition. He is a Senior Member of the IEEE and National Academy of Inventors (NAI).</p>
+        </div></div>
       </div>
-      <div class="card">
+      <div class="card speaker" tabindex="0">
         <img class="avatar" src="assets/speakers/Cappello.jpg" alt="Prof. Leonardo Cappello">
         <a href="https://www.santannapisa.it/en/leonardo-cappello" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Leonardo Cappello</a>
         <div class="muted" style="text-align:center">Scuola Superiore Sant'Anna</div>
         <div class="muted" style="text-align:center;font-style:italic">Muscoloskeletal Expansion through an Osseointegrated Implant</div>
+        <div class="bio-overlay"><div class="bio-overlay-inner">
+          <strong>Prof. Leonardo Cappello</strong>
+          <p>Leonardo Cappello is a Tenure-Track Assistant Professor at the BioRobotics Institute - Scuola Superiore Sant'Anna, Italy, where he leads the Textile Robotics Lab. He works on the design of textile-based robotic wearables for human sensorimotor restoration and augmentation. His research interests include haptics, assistive and rehabilitation robotics, prosthetics and orthotics, and motor neurosciences. He was recently awarded with the European Research Council Starting Grant (ERC StG) for the project MUsculoSkeletal Expansion (MUSE). Leonardo Cappello graduated in Mechanical Engineering (BS) and in Biomedical Engineering (MS) at the University of Florence, Italy. He accomplished his PhD in "Robotics, Cognition and Interaction Technologies" at the Italian Institute of Technology. During his PhD, he was visiting student at the Nanyang Technological University, Robotics Research Centre, Singapore. He was then Postdoctoral Researcher at Harvard University and the Wyss Institute for Biologically Inspired Engineering, where he worked on soft wearable robots for upper limb sensorimotor restoration. He was also Postdoctoral Researcher at the BioRobotics Institute - Scuola Superiore Sant'Anna - investigating advanced robotic prostheses and prosthetic techniques for the upper extremities.</p>
+        </div></div>
       </div>
-      <div class="card">
+      <div class="card speaker" tabindex="0">
         <img class="avatar" src="assets/speakers/Gherardini.png" alt="Dr. Marta Gherardini">
         <a href="https://www.santannapisa.it/it/marta-gherardini" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Dr. Marta Gherardini</a>
         <div class="muted" style="text-align:center">Scuola Superiore Sant’Anna</div>
         <div class="muted" style="text-align:center;font-style:italic">The Myokinetic Interface: A bi-directional neural machine interface</div>
+        <div class="bio-overlay"><div class="bio-overlay-inner">
+          <strong>Dr. Marta Gherardini</strong>
+          <p>Marta Gherardini is an Assistant Professor at The BioRobotics Institute of Scuola Superiore Sant'Anna, Pisa, Italy. Her research focuses on biomedical robotics, prosthetics, and human-machine interfaces, with particular emphasis on developing next-generation control and sensory feedback technologies for upper-limb prostheses based on implantable magnets. She received her PhD in Biorobotics with honors from Scuola Superiore Sant'Anna in 2022, and has contributed to several national and European research projects on wearable robotics and prosthetic technologies. She has authored and co-authored numerous publications in leading international journals, including Science Robotics and Science Advances, serves as Associate Editor for IEEE Transactions on Neural Systems and Rehabilitation Engineering, and is actively involved in the international robotics and rehabilitation research community.</p>
+        </div></div>
       </div>
-      <div class="card">
+      <div class="card speaker" tabindex="0">
         <img class="avatar" src="assets/speakers/Hargrove.jpg" alt="Prof. Levi Hargrove">
         <a href="https://www.sralab.org/researchers/levi-hargrove-phd" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700">Prof. Levi Hargrove</a>
         <div class="muted" style="text-align:center">Shirley Ryan Ability Lab and Northwestern University</div>
         <div class="muted" style="text-align:center;font-style:italic">The Struggle is Real: Development and Translation of Bionic Limb Technology</div>
+        <div class="bio-overlay"><div class="bio-overlay-inner">
+          <strong>Prof. Levi Hargrove</strong>
+          <p>Levi J. Hargrove, PhD, P.Eng, received his MScE and PhD in Electrical Engineering from the University of New Brunswick (2005, 2008). He is currently the Director of Center for Bionic Medicine at the Shirley Ryan AbilityLab, formerly the Rehabilitation Institute of Chicago (RIC), and a Professor in the Departments of Physical Medicine & Rehabilitation and the McCormick School of Engineering at Northwestern University. His research interests include signal processing, pattern recognition, and control of bionic limbs. A major goal of his research is to develop clinically realizable myoelectric control systems that can be made available to persons with limb loss in the near future. In 2012, Dr. Hargrove co-founded Coapt, a company to commercialize control algorithms for prosthetics and orthotics. His research addresses all levels of amputation and has been published in the Journal of the American Medical Association and the New England Journal of Medicine and has resulted in multiple patents. Key projects include the development of advanced and adaptive control systems for prosthetic legs, improving control of robotic hand prostheses, and intramuscular EMG signal processing.</p>
+        </div></div>
       </div>
     </div>
   </section>
